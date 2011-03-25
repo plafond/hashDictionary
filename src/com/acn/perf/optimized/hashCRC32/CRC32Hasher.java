@@ -1,4 +1,4 @@
-package com.acn.perf.normal.hashCRC32;
+package com.acn.perf.optimized.hashCRC32;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,8 +11,8 @@ public class CRC32Hasher {
 
 	public static Map<String, Long> hashWords(List<String> words)
 	{
-		//TODO - predefine size
-		Map<String, Long> wordHash = new HashMap<String, Long>();
+		//TODO - changed to predefine size of hashmap to reduce # of collection grows
+		Map<String, Long> wordHash = new HashMap<String, Long>(50000);
 		long start = System.nanoTime();		
 		for(String word : words)
 		{

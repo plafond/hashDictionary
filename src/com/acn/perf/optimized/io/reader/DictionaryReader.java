@@ -1,5 +1,6 @@
-package com.acn.perf.normal.io.reader;
+package com.acn.perf.optimized.io.reader;
 
+import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,15 +13,17 @@ public class DictionaryReader {
 
 		public static List<String> getWordsFromDictionary(String path)
 		{
-			//TODO for optimize - predefine initial size of arraylist
-			List<String> words = new ArrayList<String>();
+			//TODO changed to used predefine initial size of arraylist - reduce # of collection grows
+			List<String> words = new ArrayList<String>(50000);
 			File f1 = new File(path);
 			FileInputStream fis = null;
+			BufferedInputStream bis = null;
 			DataInputStream dis = null;
 			try{
 				fis = new FileInputStream(f1);
-				//TODO for optimize - use Buffered IO
-				dis = new DataInputStream(fis);
+				//TODO - changed to use Buffered IO
+				bis = new BufferedInputStream(fis);
+				dis = new DataInputStream(bis);
 				
 				// dis.available() returns 0 if the file does not have more lines.
 				long start = System.nanoTime();

@@ -1,9 +1,8 @@
-package com.acn.perf.normal.db.dbutil;
+package com.acn.perf.optimized.db.dbutil;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import com.acn.perf.db.factory.DBFactory;
@@ -42,37 +41,35 @@ public class DBUtil {
 				con = DBFactory.getDBConnection();
 			}
 			
-			Statement stm = con.createStatement();
-			List<String> wordSQL = new ArrayList<String>();
-			List<String> wordSizeSQL = new ArrayList<String>();
 			
-			//TODO replace with prepared statements
+			PreparedStatement stmWord = con.prepareStatement("INSERT INTO " + HASH_WORD_TABLE + " (word, hash) VALUES (?, ?)");
+			PreparedStatement stmWordSize = con.prepareStatement("INSERT INTO " + HASH_WORD_SIZE_TABLE + " (wordsize, hash) VALUES (?, ?)");
+
+			//TODO replace with prepared statements and batch
 			long start = System.nanoTime();
 			for(Map.Entry<String, Long> entry : hashWords.entrySet())
 			{
-				String hashWordSQL = "INSERT INTO " + HASH_WORD_TABLE + " (word, hash) VALUES ('" + escapeApostropheChar(entry.getKey()) + "', '" + entry.getValue() +"')";
-				wordSQL.add(hashWordSQL);
+				stmWord.setString(1, escapeApostropheChar(entry.getKey()));
+				stmWord.setString(2, String.valueOf(entry.getValue()));
+				stmWord.addBatch();
 				
-				String hashWordSizeSQL = "INSERT INTO " + HASH_WORD_SIZE_TABLE + " (wordsize, hash) VALUES ('" + entry.getKey().length() + "', '" + entry.getValue() +"')";
-				wordSizeSQL.add(hashWordSizeSQL);
+				stmWordSize.setString(1, String.valueOf(entry.getKey().length()));
+				stmWordSize.setString(2, String.valueOf(entry.getValue()));
+				stmWordSize.addBatch();
 			}
 			Log.logPerf("Time taken to generate INSERT SQL statements:", (System.nanoTime() - start));
 			
-			//TODO replace with BATCH
+			//TODO replaced with BATCH
 			start = System.nanoTime();
-			for(String sql : wordSQL)
-			{
-				stm.execute(sql);
-			}
-			Log.logPerf("Time taken to INSERT " + wordSQL.size() + " records into " + HASH_WORD_TABLE + ": ", (System.nanoTime() - start));
+			stmWord.execute();
+			Log.logPerf("Time taken to INSERT " + hashWords.size() + " records into " + HASH_WORD_TABLE + ": ", (System.nanoTime() - start));
+			stmWord.close();
 			
-			//TODO replace with BATCH
+			//TODO replaced with BATCH
 			start = System.nanoTime();
-			for(String sql : wordSizeSQL)
-			{
-				stm.execute(sql);
-			}
-			Log.logPerf("Time taken to INSERT " + wordSizeSQL.size() + " records into " + HASH_WORD_SIZE_TABLE + ": ", (System.nanoTime() - start));
+			stmWordSize.execute();
+			Log.logPerf("Time taken to INSERT " + hashWords.size() + " records into " + HASH_WORD_SIZE_TABLE + ": ", (System.nanoTime() - start));
+			stmWordSize.close();
 		}
 		catch(Exception ex)
 		{

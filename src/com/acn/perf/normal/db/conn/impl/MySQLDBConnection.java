@@ -3,7 +3,7 @@ package com.acn.perf.normal.db.conn.impl;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import com.acn.perf.normal.log.Log;
+import com.acn.perf.log.Log;
 
 public class MySQLDBConnection {
 	
@@ -12,7 +12,10 @@ public class MySQLDBConnection {
 	    try{
 	    	Class.forName("com.mysql.jdbc.Driver");
 	    }
-	    catch(Exception ex){}	
+	    catch(Exception ex)
+	    {
+	    	Log.log("Error load JDBC driver", ex);
+	    }	
 	}
 	
 	public static Connection getDBConnection()

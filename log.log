@@ -1,5 +1,6 @@
-Time taken read 98569 words:22608025381
-Time taken to hash in crc32:942238620
-Time taken to generate INSERT SQL statements:4267580009
-Time taken to INSERT 98569 records into hashWords: 98406844187
-Time taken to INSERT 98569 records into hashWordSize: 85865287192
+########## Optimized Mode ##########
+Time taken read 98569 words:1390135486
+Time taken to hash in crc32:325534580
+Time taken to generate INSERT SQL statements:3342813983
+Time taken to INSERT 98569 records into hashWords: 10447079
+Time taken to INSERT 98569 records into hashWordSize: 2240670
