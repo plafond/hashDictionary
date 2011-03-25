@@ -1,9 +1,8 @@
 package com.acn.perf.optimized.io.reader;
 
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
+import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,19 +15,18 @@ public class DictionaryReader {
 			//TODO changed to used predefine initial size of arraylist - reduce # of collection grows
 			List<String> words = new ArrayList<String>(50000);
 			File f1 = new File(path);
-			FileInputStream fis = null;
-			BufferedInputStream bis = null;
-			DataInputStream dis = null;
+			FileReader fr = null;
+			BufferedReader br = null;
+		
 			try{
-				fis = new FileInputStream(f1);
+				fr = new FileReader(f1);
 				//TODO - changed to use Buffered IO
-				bis = new BufferedInputStream(fis);
-				dis = new DataInputStream(bis);
+				br = new BufferedReader(fr);
 				
-				// dis.available() returns 0 if the file does not have more lines.
+				String line = null;
 				long start = System.nanoTime();
-			    while (dis.available() != 0) {
-			    	words.add(dis.readLine());
+			    while ((line = br.readLine()) != null) {
+			    	words.add(line);
 			    }
 				Log.logPerf("Time taken read " + words.size() + " words:", (System.nanoTime() - start));
 			}
@@ -39,8 +37,8 @@ public class DictionaryReader {
 			finally
 			{
 				try{
-					dis.close();
-					fis.close();
+					br.close();
+					fr.close();
 				}
 				catch(Exception ex)
 				{
