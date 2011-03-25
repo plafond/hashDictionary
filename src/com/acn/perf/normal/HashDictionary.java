@@ -33,13 +33,10 @@ public class HashDictionary {
 		Scanner in = new Scanner(System.in);
 
 	    String option = in.nextLine();
-	    if(option != null)
-	    {
-	    	
-	    }
 	    
 	    if("1".equals(option))
 		{
+	    	System.out.println("\nSetup Complete - Check the log file for benchmarks!");
 			setup();
 			runTerminal();
 		}
@@ -50,7 +47,7 @@ public class HashDictionary {
 		}
 		else if("Q".equals(option))
 		{
-			System.out.println("\nCheck the log file for benchmarks!");
+			System.out.println("\nDon't forget to check the log file for benchmarks!!");
 			System.exit(0);
 		}
 		else

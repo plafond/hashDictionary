@@ -40,10 +40,7 @@ public class Log {
 		}
 		finally
 		{
-			try{
-				bw.write("\n");
-				bw.flush();
-			}
+			try{bw.flush();}
 			catch(Exception ex){}
 		}
 	}

@@ -1,7 +1,5 @@
-Time taken read 98569 words:1766064042
-
-Time taken to hash in crc32:428378747
-
+Time taken read 98569 words:2156705588
+Time taken to hash in crc32:463855673
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -28,11 +26,10 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:20)
 	com.acn.perf.normal.db.factory.DBFactory.populatePool(DBFactory.java:55)
 	com.acn.perf.normal.db.factory.DBFactory.<clinit>(DBFactory.java:17)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:67)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:65)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -59,11 +56,10 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:20)
 	com.acn.perf.normal.db.factory.DBFactory.populatePool(DBFactory.java:55)
 	com.acn.perf.normal.db.factory.DBFactory.<clinit>(DBFactory.java:17)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:67)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:65)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -90,11 +86,10 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:20)
 	com.acn.perf.normal.db.factory.DBFactory.populatePool(DBFactory.java:55)
 	com.acn.perf.normal.db.factory.DBFactory.<clinit>(DBFactory.java:17)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:67)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:65)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -121,11 +116,10 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:20)
 	com.acn.perf.normal.db.factory.DBFactory.populatePool(DBFactory.java:55)
 	com.acn.perf.normal.db.factory.DBFactory.<clinit>(DBFactory.java:17)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:67)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:65)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -152,11 +146,10 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:20)
 	com.acn.perf.normal.db.factory.DBFactory.populatePool(DBFactory.java:55)
 	com.acn.perf.normal.db.factory.DBFactory.<clinit>(DBFactory.java:17)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:67)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:65)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -183,11 +176,10 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:20)
 	com.acn.perf.normal.db.factory.DBFactory.populatePool(DBFactory.java:55)
 	com.acn.perf.normal.db.factory.DBFactory.<clinit>(DBFactory.java:17)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:67)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:65)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -213,11 +205,10 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:41)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:20)
 	com.acn.perf.normal.db.factory.DBFactory.getDBConnection(DBFactory.java:22)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:67)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:65)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -245,19 +236,17 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.factory.DBFactory.getTopLevelConnection(DBFactory.java:27)
 	com.acn.perf.normal.db.dbutil.DBUtil.createDatabase(DBUtil.java:108)
 	com.acn.perf.normal.db.dbutil.DBUtil.dropTables(DBUtil.java:88)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:71)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:69)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error creating Database
 com.acn.perf.normal.db.dbutil.DBUtil.createDatabase(DBUtil.java:108)
 	com.acn.perf.normal.db.dbutil.DBUtil.dropTables(DBUtil.java:88)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:71)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:69)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -284,18 +273,16 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:20)
 	com.acn.perf.normal.db.factory.DBFactory.getDBConnection(DBFactory.java:22)
 	com.acn.perf.normal.db.dbutil.DBUtil.dropTables(DBUtil.java:89)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:71)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:69)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error droping tables
 com.acn.perf.normal.db.dbutil.DBUtil.dropTables(DBUtil.java:92)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:71)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:69)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -323,19 +310,17 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.factory.DBFactory.getTopLevelConnection(DBFactory.java:27)
 	com.acn.perf.normal.db.dbutil.DBUtil.createDatabase(DBUtil.java:108)
 	com.acn.perf.normal.db.dbutil.DBUtil.createTables(DBUtil.java:22)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:72)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:70)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error creating Database
 com.acn.perf.normal.db.dbutil.DBUtil.createDatabase(DBUtil.java:108)
 	com.acn.perf.normal.db.dbutil.DBUtil.createTables(DBUtil.java:22)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:72)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:70)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -362,18 +347,16 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:20)
 	com.acn.perf.normal.db.factory.DBFactory.getDBConnection(DBFactory.java:22)
 	com.acn.perf.normal.db.dbutil.DBUtil.createTables(DBUtil.java:23)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:72)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:70)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error creating tables
 com.acn.perf.normal.db.dbutil.DBUtil.createTables(DBUtil.java:25)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:72)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:70)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -401,19 +384,17 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.factory.DBFactory.getTopLevelConnection(DBFactory.java:27)
 	com.acn.perf.normal.db.dbutil.DBUtil.createDatabase(DBUtil.java:108)
 	com.acn.perf.normal.db.dbutil.DBUtil.populateTables(DBUtil.java:41)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:73)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:71)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error creating Database
 com.acn.perf.normal.db.dbutil.DBUtil.createDatabase(DBUtil.java:108)
 	com.acn.perf.normal.db.dbutil.DBUtil.populateTables(DBUtil.java:41)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:73)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:71)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error establishing MySQL connection
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
@@ -440,15 +421,13 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	com.acn.perf.normal.db.conn.impl.MySQLDBConnection.getDBConnection(MySQLDBConnection.java:20)
 	com.acn.perf.normal.db.factory.DBFactory.getDBConnection(DBFactory.java:22)
 	com.acn.perf.normal.db.dbutil.DBUtil.populateTables(DBUtil.java:42)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:73)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:71)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
 Error populating tables
 com.acn.perf.normal.db.dbutil.DBUtil.populateTables(DBUtil.java:45)
-	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:73)
-	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:43)
+	com.acn.perf.normal.HashDictionary.setup(HashDictionary.java:71)
+	com.acn.perf.normal.HashDictionary.runTerminal(HashDictionary.java:40)
 	com.acn.perf.normal.HashDictionary.main(HashDictionary.java:21)
 	
-
