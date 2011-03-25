@@ -23,8 +23,8 @@ public class DBUtil {
 				con = DBFactory.getDBConnection();
 			}
 			Statement stm = con.createStatement();
-			stm.execute("CREATE TABLE " + HASH_WORD_TABLE + " (word(32), hash(32))");
-			stm.execute("CREATE TABLE " + HASH_WORD_SIZE_TABLE + " (wordsize(32), hash(32))");
+			stm.execute("CREATE TABLE " + HASH_WORD_TABLE + " (word CHAR(32), hash CHAR(32));");
+			stm.execute("CREATE TABLE " + HASH_WORD_SIZE_TABLE + " (wordsize CHAR(32), hash CHAR(32));");
 		}
 		catch(Exception ex)
 		{
@@ -50,10 +50,10 @@ public class DBUtil {
 			long start = System.nanoTime();
 			for(Map.Entry<String, Long> entry : hashWords.entrySet())
 			{
-				String hashWordSQL = "INSERT INTO " + HASH_WORD_TABLE + " (word', hash) VALUES (" + entry.getKey() + ", " + entry.getValue() +")";
+				String hashWordSQL = "INSERT INTO " + HASH_WORD_TABLE + " (word, hash) VALUES ('" + escapeApostropheChar(entry.getKey()) + "', '" + entry.getValue() +"')";
 				wordSQL.add(hashWordSQL);
 				
-				String hashWordSizeSQL = "INSERT INTO " + HASH_WORD_SIZE_TABLE + " (wordsize', hash) VALUES (" + entry.getKey().length() + ", " + entry.getValue() +")";
+				String hashWordSizeSQL = "INSERT INTO " + HASH_WORD_SIZE_TABLE + " (wordsize, hash) VALUES ('" + entry.getKey().length() + "', '" + entry.getValue() +"')";
 				wordSizeSQL.add(hashWordSizeSQL);
 			}
 			Log.logPerf("Time taken to generate INSERT SQL statements:", (System.nanoTime() - start));
@@ -98,7 +98,7 @@ public class DBUtil {
 		}
 		catch(Exception ex)
 		{
-			Log.log("Error droping tables", ex);
+			Log.log("Error dropping tables", ex);
 		}
 	}
 	
@@ -128,5 +128,9 @@ public class DBUtil {
 		}
 	}
 
+	private static String escapeApostropheChar(String input)
+	{
+		return input.replaceAll("'", "\\\\'");
+	}
 
 }

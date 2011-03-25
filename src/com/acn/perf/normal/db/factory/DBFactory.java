@@ -19,7 +19,7 @@ public class DBFactory {
 	
 	public static Connection getDBConnection()
 	{
-		return MySQLDBConnection.getDBConnection();
+		return MySQLDBConnection.getDBConnection(DATABASE_NAME);
 	}
 	
 	public static Connection getTopLevelConnection()
@@ -52,7 +52,7 @@ public class DBFactory {
 	{
 		while (conPool.size() < POOL_SIZE)
 		{
-			conPool.add(MySQLDBConnection.getDBConnection());
+			conPool.add(MySQLDBConnection.getDBConnection(DATABASE_NAME));
 		}
 	}
 }

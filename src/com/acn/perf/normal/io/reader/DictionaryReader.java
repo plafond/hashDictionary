@@ -27,7 +27,7 @@ public class DictionaryReader {
 			    while (dis.available() != 0) {
 			    	words.add(dis.readLine());
 			    }
-				Log.log("Time taken read " + words.size() + " words:" + (System.nanoTime() - start));
+				Log.logPerf("Time taken read " + words.size() + " words:", (System.nanoTime() - start));
 			}
 			catch(Exception ex)
 			{

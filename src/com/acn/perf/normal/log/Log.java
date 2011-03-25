@@ -47,7 +47,7 @@ public class Log {
 	
 	public static void log(String output, Exception ex)
 	{
-		log(output + "\n"+ getExceptionStackTrace(ex).toString());
+		log(output + "\n"+ ex.getMessage() + "\n"+ getExceptionStackTrace(ex).toString());
 	}
 	
 	public static void logPerf(String output, Long time)
