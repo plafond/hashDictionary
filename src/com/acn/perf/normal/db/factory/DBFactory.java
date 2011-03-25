@@ -9,7 +9,8 @@ import com.acn.perf.normal.db.conn.impl.MySQLDBConnection;
 public class DBFactory {
 
 	private static final int POOL_SIZE = 6;
-
+	public static final String DATABASE_NAME = "hashDictionary";
+	
 	private static List<Connection> conPool = new ArrayList<Connection>();
 	
 	static{
@@ -17,6 +18,11 @@ public class DBFactory {
 	}
 	
 	public static Connection getDBConnection()
+	{
+		return MySQLDBConnection.getDBConnection();
+	}
+	
+	public static Connection getTopLevelConnection()
 	{
 		return MySQLDBConnection.getDBConnection();
 	}

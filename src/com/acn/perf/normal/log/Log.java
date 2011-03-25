@@ -28,9 +28,10 @@ public class Log {
 		try
 		{
 			Scanner scanner = new Scanner(output);
-			while(scanner.hasNext())
+			
+			while(scanner.hasNextLine())
 			{
-				bw.write(scanner.next() + " ");
+				bw.write(scanner.nextLine() + "\n");
 			}
 		}
 		catch(Exception ex)
@@ -49,14 +50,25 @@ public class Log {
 	
 	public static void log(String output, Exception ex)
 	{
-		log(output + "\n"+ ex.getMessage());
+		log(output + "\n"+ getExceptionStackTrace(ex).toString());
 	}
 	
-	public static void logPerf(String output)
+	public static void logPerf(String output, Long time)
 	{
 		if(logPerf)
 		{
-			log(output);
+			log(output + time);
 		}
+	}
+	
+	private static StringBuilder getExceptionStackTrace(Exception ex)
+	{
+		StringBuilder sb = new StringBuilder();
+		StackTraceElement[] ste = ex.getStackTrace();
+		for(StackTraceElement line : ste)
+		{
+			sb.append(line.toString() + "\n\t");
+		}
+		return sb;
 	}
 }

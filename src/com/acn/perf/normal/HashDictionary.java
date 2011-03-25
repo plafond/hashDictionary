@@ -1,12 +1,15 @@
 package com.acn.perf.normal;
 
+import java.sql.Connection;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 import com.acn.perf.normal.db.dbutil.DBUtil;
+import com.acn.perf.normal.db.factory.DBFactory;
 import com.acn.perf.normal.hashCRC32.CRC32Hasher;
 import com.acn.perf.normal.io.reader.DictionaryReader;
+import com.acn.perf.normal.log.Log;
 
 public class HashDictionary {
 
@@ -34,6 +37,7 @@ public class HashDictionary {
 	    {
 	    	
 	    }
+	    
 	    if("1".equals(option))
 		{
 			setup();
@@ -46,8 +50,8 @@ public class HashDictionary {
 		}
 		else if("Q".equals(option))
 		{
-			in.close();
 			System.out.println("\nCheck the log file for benchmarks!");
+			System.exit(0);
 		}
 		else
 		{
@@ -61,7 +65,24 @@ public class HashDictionary {
 		List<String> words = DictionaryReader.getWordsFromDictionary(DICTIONARY_PATH);
 		Map<String, Long> hashWords = CRC32Hasher.hashWords(words);
 		
-		DBUtil.createDatabase();
-		DBUtil.dropDatabase();
+		Connection con = DBFactory.getDBConnection();
+		try
+		{
+			//clean first
+			DBUtil.dropTables(con);		
+			DBUtil.createTables(con);
+			DBUtil.populateTables(con, hashWords);						
+		}
+		catch(Exception ex)
+		{		
+			Log.log("Error while doing DB setup operations", ex);
+		}
+		finally
+		{
+			try{ con.close(); }
+			catch(Exception ex){};
+		}
+		
+		runTerminal();
 	}
 }
