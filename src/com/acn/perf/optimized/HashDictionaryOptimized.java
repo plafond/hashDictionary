@@ -73,7 +73,10 @@ public class HashDictionaryOptimized {
 			try{ con.close(); }
 			catch(Exception ex){};
 		}
-		
-		runTerminal();
+	}
+	
+	public static void testHookSetup()
+	{
+		setup();
 	}
 }

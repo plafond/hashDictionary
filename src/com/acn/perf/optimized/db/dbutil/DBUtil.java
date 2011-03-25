@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.acn.perf.db.factory.DBFactory;
 import com.acn.perf.log.Log;
+import com.acn.perf.log.LogDictionary;
 
 public class DBUtil {
 	
@@ -57,18 +58,18 @@ public class DBUtil {
 				stmWordSize.setString(2, String.valueOf(entry.getValue()));
 				stmWordSize.addBatch();
 			}
-			Log.logPerf("Time taken to generate INSERT SQL statements:", (System.nanoTime() - start));
+			Log.logPerf(LogDictionary.GENERATE_INSERT_STMS, (System.nanoTime() - start));
 			
 			//TODO replaced with BATCH
 			start = System.nanoTime();
 			stmWord.execute();
-			Log.logPerf("Time taken to INSERT " + hashWords.size() + " records into " + HASH_WORD_TABLE + ": ", (System.nanoTime() - start));
+			Log.logPerf(LogDictionary.INSERT_INTO_TABLE.replace("?", String.valueOf(hashWords.size())).replace("@", HASH_WORD_TABLE), (System.nanoTime() - start));
 			stmWord.close();
 			
 			//TODO replaced with BATCH
 			start = System.nanoTime();
 			stmWordSize.execute();
-			Log.logPerf("Time taken to INSERT " + hashWords.size() + " records into " + HASH_WORD_SIZE_TABLE + ": ", (System.nanoTime() - start));
+			Log.logPerf(LogDictionary.INSERT_INTO_TABLE.replace("?", String.valueOf(hashWords.size())).replace("@", HASH_WORD_SIZE_TABLE), (System.nanoTime() - start));
 			stmWordSize.close();
 		}
 		catch(Exception ex)

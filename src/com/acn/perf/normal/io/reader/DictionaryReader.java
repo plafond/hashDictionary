@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.acn.perf.log.Log;
+import com.acn.perf.log.LogDictionary;
 
 public class DictionaryReader {
 
@@ -27,7 +28,7 @@ public class DictionaryReader {
 			    while (dis.available() != 0) {
 			    	words.add(dis.readLine());
 			    }
-				Log.logPerf("Time taken read " + words.size() + " words:", (System.nanoTime() - start));
+				Log.logPerf(LogDictionary.READ_DICTIONARY.replace("?", String.valueOf(words.size())), (System.nanoTime() - start));
 			}
 			catch(Exception ex)
 			{

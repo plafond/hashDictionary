@@ -73,7 +73,10 @@ public class HashDictionaryNormal {
 			try{ con.close(); }
 			catch(Exception ex){};
 		}
-		
-		runTerminal();
+	}
+	
+	public static void testHookSetup()
+	{
+		setup();
 	}
 }

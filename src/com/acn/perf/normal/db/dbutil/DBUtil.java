@@ -8,6 +8,7 @@ import java.util.Map;
 
 import com.acn.perf.db.factory.DBFactory;
 import com.acn.perf.log.Log;
+import com.acn.perf.log.LogDictionary;
 
 public class DBUtil {
 	
@@ -56,7 +57,7 @@ public class DBUtil {
 				String hashWordSizeSQL = "INSERT INTO " + HASH_WORD_SIZE_TABLE + " (wordsize, hash) VALUES ('" + entry.getKey().length() + "', '" + entry.getValue() +"')";
 				wordSizeSQL.add(hashWordSizeSQL);
 			}
-			Log.logPerf("Time taken to generate INSERT SQL statements:", (System.nanoTime() - start));
+			Log.logPerf(LogDictionary.GENERATE_INSERT_STMS, (System.nanoTime() - start));
 			
 			//TODO replace with BATCH
 			start = System.nanoTime();
@@ -64,7 +65,8 @@ public class DBUtil {
 			{
 				stm.execute(sql);
 			}
-			Log.logPerf("Time taken to INSERT " + wordSQL.size() + " records into " + HASH_WORD_TABLE + ": ", (System.nanoTime() - start));
+			
+			Log.logPerf(LogDictionary.INSERT_INTO_TABLE.replace("?", String.valueOf(wordSQL.size())).replace("@", HASH_WORD_TABLE), (System.nanoTime() - start));
 			
 			//TODO replace with BATCH
 			start = System.nanoTime();
@@ -72,7 +74,8 @@ public class DBUtil {
 			{
 				stm.execute(sql);
 			}
-			Log.logPerf("Time taken to INSERT " + wordSizeSQL.size() + " records into " + HASH_WORD_SIZE_TABLE + ": ", (System.nanoTime() - start));
+			;
+			Log.logPerf(LogDictionary.INSERT_INTO_TABLE.replace("?", String.valueOf(wordSizeSQL.size())).replace("@", HASH_WORD_SIZE_TABLE), (System.nanoTime() - start));
 		}
 		catch(Exception ex)
 		{

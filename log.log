@@ -1,6 +1,100 @@
-########## Optimized Mode ##########
-Time taken read 98569 words:244366334
-Time taken to hash in crc32:296456260
-Time taken to generate INSERT SQL statements:3557128681
-Time taken to INSERT 98569 records into hashWords: 54429829
-Time taken to INSERT 98569 records into hashWordSize: 10164528
+Time taken read 98569 words : 5154171294
+Time taken to hash in crc32:289739651
+Time taken to generate INSERT SQL statements : 1415284808
+Time taken to INSERT 98569 records into hashWords : 83785236234
+Time taken to INSERT 98569 records into hashWordSize : 81632961662
+Time taken read 98569 words : 3696979166
+Time taken to hash in crc32:253168407
+Time taken to generate INSERT SQL statements : 1164576225
+Time taken to INSERT 98569 records into hashWords : 77046488944
+Time taken to INSERT 98569 records into hashWordSize : 77896405036
+Time taken read 98569 words : 3408387512
+Time taken to hash in crc32:186350367
+Time taken to generate INSERT SQL statements : 1078606045
+Time taken to INSERT 98569 records into hashWords : 79367425563
+Time taken to INSERT 98569 records into hashWordSize : 78879653222
+Time taken read 98569 words : 3641742345
+Time taken to hash in crc32:182219681
+Time taken to generate INSERT SQL statements : 728086086
+Time taken to INSERT 98569 records into hashWords : 81880084334
+Time taken to INSERT 98569 records into hashWordSize : 78979755050
+Time taken read 98569 words : 3624214536
+Time taken to hash in crc32:219812284
+Time taken to generate INSERT SQL statements : 791076422
+Time taken to INSERT 98569 records into hashWords : 79049027974
+Time taken to INSERT 98569 records into hashWordSize : 78361040422
+Time taken read 98569 words : 3782165746
+Time taken to hash in crc32:179913744
+Time taken to generate INSERT SQL statements : 804982549
+Time taken to INSERT 98569 records into hashWords : 80122343871
+Time taken to INSERT 98569 records into hashWordSize : 108890650566
+Time taken read 98569 words : 3630816883
+Time taken to hash in crc32:232103772
+Time taken to generate INSERT SQL statements : 875673169
+Time taken to INSERT 98569 records into hashWords : 92457143860
+Time taken to INSERT 98569 records into hashWordSize : 80286777120
+Time taken read 98569 words : 3530416884
+Time taken to hash in crc32:178925309
+Time taken to generate INSERT SQL statements : 838881075
+Time taken to INSERT 98569 records into hashWords : 77380373703
+Time taken to INSERT 98569 records into hashWordSize : 77646069784
+Time taken read 98569 words : 4496117272
+Time taken to hash in crc32:289397252
+Time taken to generate INSERT SQL statements : 2823530237
+Time taken to INSERT 98569 records into hashWords : 86334397186
+Time taken to INSERT 98569 records into hashWordSize : 78946479714
+Time taken read 98569 words : 3978772320
+Time taken to hash in crc32:124049945
+Time taken to generate INSERT SQL statements : 1067517914
+Time taken to INSERT 98569 records into hashWords : 79492598707
+Time taken to INSERT 98569 records into hashWordSize : 78928881643
+Time taken read 98569 words : 83889165
+Time taken to hash in crc32:133465447
+Time taken to generate INSERT SQL statements : 1308591064
+Time taken to INSERT 98569 records into hashWords : 1518352
+Time taken to INSERT 98569 records into hashWordSize : 2034461
+Time taken read 98569 words : 20037198
+Time taken to hash in crc32:213097691
+Time taken to generate INSERT SQL statements : 1163245639
+Time taken to INSERT 98569 records into hashWords : 1159432
+Time taken to INSERT 98569 records into hashWordSize : 3339475
+Time taken read 98569 words : 37429835
+Time taken to hash in crc32:300299559
+Time taken to generate INSERT SQL statements : 1175050108
+Time taken to INSERT 98569 records into hashWords : 3127434
+Time taken to INSERT 98569 records into hashWordSize : 8341909
+Time taken read 98569 words : 19414372
+Time taken to hash in crc32:132927766
+Time taken to generate INSERT SQL statements : 1254850509
+Time taken to INSERT 98569 records into hashWords : 2790224
+Time taken to INSERT 98569 records into hashWordSize : 1781013
+Time taken read 98569 words : 19504755
+Time taken to hash in crc32:351870650
+Time taken to generate INSERT SQL statements : 1210248305
+Time taken to INSERT 98569 records into hashWords : 1239231
+Time taken to INSERT 98569 records into hashWordSize : 819434
+Time taken read 98569 words : 46221478
+Time taken to hash in crc32:198985021
+Time taken to generate INSERT SQL statements : 936603672
+Time taken to INSERT 98569 records into hashWords : 1776177
+Time taken to INSERT 98569 records into hashWordSize : 975267
+Time taken read 98569 words : 25733803
+Time taken to hash in crc32:315643490
+Time taken to generate INSERT SQL statements : 1139130017
+Time taken to INSERT 98569 records into hashWords : 3309409
+Time taken to INSERT 98569 records into hashWordSize : 839021
+Time taken read 98569 words : 21122933
+Time taken to hash in crc32:215487058
+Time taken to generate INSERT SQL statements : 1031030045
+Time taken to INSERT 98569 records into hashWords : 1374872
+Time taken to INSERT 98569 records into hashWordSize : 2767598
+Time taken read 98569 words : 109297595
+Time taken to hash in crc32:105629247
+Time taken to generate INSERT SQL statements : 1297833480
+Time taken to INSERT 98569 records into hashWords : 1037774
+Time taken to INSERT 98569 records into hashWordSize : 2376683
+Time taken read 98569 words : 94567888
+Time taken to hash in crc32:632610622
+Time taken to generate INSERT SQL statements : 1838003042
+Time taken to INSERT 98569 records into hashWords : 4069190
+Time taken to INSERT 98569 records into hashWordSize : 2586888
