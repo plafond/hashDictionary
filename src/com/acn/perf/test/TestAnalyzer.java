@@ -15,7 +15,7 @@ import com.acn.perf.log.LogDictionary;
 
 public class TestAnalyzer {
 
-	private static String[] LOG_ENTRIES =  new String[] {LogDictionary.READ_DICTIONARY, LogDictionary.GENERATE_INSERT_STMS, LogDictionary.INSERT_INTO_TABLE.replace("@", "hashWords"), LogDictionary.INSERT_INTO_TABLE.replace("@", "hashWordSize")}; 
+	private static String[] LOG_ENTRIES =  new String[] {LogDictionary.READ_DICTIONARY, LogDictionary.HASH_TIME, LogDictionary.GENERATE_INSERT_STMS, LogDictionary.INSERT_INTO_TABLE.replace("@", "hashWords"), LogDictionary.INSERT_INTO_TABLE.replace("@", "hashWordSize")}; 
 	
 	public static Map<String, Long> getResultsFromLog(String path)
 	{

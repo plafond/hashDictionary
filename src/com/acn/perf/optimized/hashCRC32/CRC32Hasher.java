@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.zip.CRC32;
 
 import com.acn.perf.log.Log;
+import com.acn.perf.log.LogDictionary;
 
 public class CRC32Hasher {
 
@@ -18,7 +19,7 @@ public class CRC32Hasher {
 		{
 			wordHash.put(word, hashString(word));
 		}
-		Log.log("Time taken to hash in crc32:" + (System.nanoTime() - start));			
+		Log.logPerf(LogDictionary.HASH_TIME, (System.nanoTime() - start));			
 		
 		return wordHash;
 	}
