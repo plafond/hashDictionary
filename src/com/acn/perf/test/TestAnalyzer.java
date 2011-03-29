@@ -11,13 +11,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.acn.perf.log.Log;
-import com.acn.perf.log.LogDictionary;
+
 
 public class TestAnalyzer {
 
-	private static String[] LOG_ENTRIES =  new String[] {LogDictionary.READ_DICTIONARY, LogDictionary.HASH_TIME, LogDictionary.GENERATE_INSERT_STMS, LogDictionary.INSERT_INTO_TABLE.replace("@", "hashWords"), LogDictionary.INSERT_INTO_TABLE.replace("@", "hashWordSize")}; 
-	
-	public static Map<String, Long> getResultsFromLog(String path)
+	public static Map<String, Long> getResultsFromLog(String path, String[] entries)
 	{
 		Map<String, Long> results = new HashMap<String, Long>();
 		File f1 = new File(path);
@@ -30,7 +28,7 @@ public class TestAnalyzer {
 			
 			String line = null;
 		    while ((line = br.readLine()) != null) {
-		    	for(String entry : LOG_ENTRIES)
+		    	for(String entry : entries)
 		    	{
 		    		entry = entry.replaceAll("\\?", ".*").trim();
 		    		Pattern p = Pattern.compile(entry);

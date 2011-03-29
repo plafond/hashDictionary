@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.acn.perf.example.StringConcatExample;
+import com.acn.perf.log.LogDictionary;
 import com.acn.perf.normal.HashDictionaryNormal;
 import com.acn.perf.optimized.HashDictionaryOptimized;
 
@@ -31,7 +33,7 @@ public class TestHarness {
 		for(int i=0; i < loopCount; i++)
 		{
 			HashDictionaryNormal.testHookSetup();
-			results.add(TestAnalyzer.getResultsFromLog(LOG_PATH));
+			results.add(TestAnalyzer.getResultsFromLog(LOG_PATH, LogDictionary.HASH_DICTIONARY_LOG_ENTRIES));
 		}
 		
 		System.out.println("### Normal Execution Results ###");
@@ -50,7 +52,45 @@ public class TestHarness {
 		for(int i=0; i < loopCount; i++)
 		{
 			HashDictionaryOptimized.testHookSetup();
-			results.add(TestAnalyzer.getResultsFromLog(LOG_PATH));
+			results.add(TestAnalyzer.getResultsFromLog(LOG_PATH, LogDictionary.HASH_DICTIONARY_LOG_ENTRIES));
+		}
+		
+		System.out.println("### Optimized Execution Results ###");
+		TestAnalyzer.writeTestResults(results);
+	}
+	
+	public static void testStringConcatExample(Integer exec)
+	{
+		int loopCount = EXECUTIONS;
+		if(exec != null)
+		{
+			loopCount = exec;
+		}
+		
+		List<Map<String, Long>> results = new ArrayList<Map<String, Long>>();
+		for(int i=0; i < loopCount; i++)
+		{
+			StringConcatExample.executeStringConcat();
+			results.add(TestAnalyzer.getResultsFromLog(LOG_PATH, LogDictionary.STRING_CONCAT_LOG_ENTRIES));
+		}
+		
+		System.out.println("### Normal Execution Results ###");
+		TestAnalyzer.writeTestResults(results);
+	}
+	
+	public static void testStringConcatOptimizedExample(Integer exec)
+	{
+		int loopCount = EXECUTIONS;
+		if(exec != null)
+		{
+			loopCount = exec;
+		}
+		
+		List<Map<String, Long>> results = new ArrayList<Map<String, Long>>();
+		for(int i=0; i < loopCount; i++)
+		{
+			StringConcatExample.executeStringConcatOptimized();
+			results.add(TestAnalyzer.getResultsFromLog(LOG_PATH, LogDictionary.STRING_CONCAT_LOG_ENTRIES));
 		}
 		
 		System.out.println("### Optimized Execution Results ###");
