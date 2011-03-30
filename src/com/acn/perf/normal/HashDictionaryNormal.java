@@ -62,7 +62,8 @@ public class HashDictionaryNormal {
 			//clean first
 			DBUtil.dropTables(con);		
 			DBUtil.createTables(con);
-			DBUtil.populateTables(con, hashWords);						
+			DBUtil dbUtil = new DBUtil();
+			dbUtil.populateTables(con, hashWords);						
 		}
 		catch(Exception ex)
 		{		

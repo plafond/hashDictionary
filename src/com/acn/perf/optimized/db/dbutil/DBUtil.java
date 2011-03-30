@@ -2,37 +2,16 @@ package com.acn.perf.optimized.db.dbutil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.util.Map;
 
 import com.acn.perf.db.factory.DBFactory;
 import com.acn.perf.log.Log;
 import com.acn.perf.log.LogDictionary;
 
-public class DBUtil {
+public class DBUtil extends com.acn.perf.db.dbutil.DBUtil {
 	
-	private static final String HASH_WORD_TABLE = "hashWords";
-	private static final String HASH_WORD_SIZE_TABLE = "hashWordSize";
 	
-	public static void createTables(Connection con)
-	{
-		try{
-			if(con == null)
-			{
-				createDatabase();
-				con = DBFactory.getDBConnection();
-			}
-			Statement stm = con.createStatement();
-			stm.execute("CREATE TABLE " + HASH_WORD_TABLE + " (word CHAR(32), hash CHAR(32));");
-			stm.execute("CREATE TABLE " + HASH_WORD_SIZE_TABLE + " (wordsize CHAR(32), hash CHAR(32));");
-		}
-		catch(Exception ex)
-		{
-			Log.log("Error creating tables", ex);
-		}
-	}
-	
-	public static void populateTables(Connection con, Map<String, Long> hashWords)
+	public void populateTables(Connection con, Map<String, Long> hashWords)
 	{
 		try
 		{
@@ -62,13 +41,13 @@ public class DBUtil {
 			
 			//TODO replaced with BATCH
 			start = System.nanoTime();
-			stmWord.execute();
+			stmWord.executeBatch();
 			Log.logPerf(LogDictionary.INSERT_INTO_TABLE.replace("?", String.valueOf(hashWords.size())).replace("@", HASH_WORD_TABLE), (System.nanoTime() - start));
 			stmWord.close();
 			
 			//TODO replaced with BATCH
 			start = System.nanoTime();
-			stmWordSize.execute();
+			stmWordSize.executeBatch();
 			Log.logPerf(LogDictionary.INSERT_INTO_TABLE.replace("?", String.valueOf(hashWords.size())).replace("@", HASH_WORD_SIZE_TABLE), (System.nanoTime() - start));
 			stmWordSize.close();
 		}
@@ -77,58 +56,4 @@ public class DBUtil {
 			Log.log("Error populating tables", ex);
 		}
 	}
-	
-	public static void dropTables(Connection con)
-	{
-		try{
-			if(con == null)
-			{
-				createDatabase();
-				con = DBFactory.getDBConnection();
-			}
-			
-			Statement stm = con.createStatement();
-			
-			stm.executeUpdate("DROP TABLE " + HASH_WORD_TABLE);
-			stm.executeUpdate("DROP TABLE " + HASH_WORD_SIZE_TABLE);
-
-			stm.close();
-		}
-		catch(Exception ex)
-		{
-			Log.log("Error dropping tables", ex);
-		}
-	}
-	
-	private static void createDatabase()
-	{
-		try{
-			Statement stm = DBFactory.getTopLevelConnection().createStatement();
-			stm.executeUpdate("CREATE DATABASE " + DBFactory.DATABASE_NAME);
-			stm.close();
-		}
-		catch(Exception ex)
-		{
-			Log.log("Error creating Database", ex);
-		}
-	}
-	
-	private static void dropDatabase()
-	{
-		try{
-			Statement stm = DBFactory.getTopLevelConnection().createStatement();
-			stm.executeUpdate("DROP DATABASE " + DBFactory.DATABASE_NAME);
-			stm.close();
-		}
-		catch(Exception ex)
-		{
-			Log.log("Error droping Database", ex);
-		}
-	}
-
-	private static String escapeApostropheChar(String input)
-	{
-		return input.replaceAll("'", "\\\\'");
-	}
-
 }

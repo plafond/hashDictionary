@@ -5,7 +5,7 @@ import com.acn.perf.log.LogDictionary;
 
 public class StringConcatExample {
 
-	private static final int LOOP_MAX_VAL = 12000;
+	private static final int LOOP_MAX_VAL = 20000;
 	
 	//string buffer vs string builder vs string concat
 	public static void executeStringConcat()
@@ -48,7 +48,7 @@ public class StringConcatExample {
 		}
 		Log.logPerf(LogDictionary.STRING_CONCAT.replace("?", String.valueOf(LOOP_MAX_VAL)), System.nanoTime() - start);		
 		
-		StringBuffer sbuf = new StringBuffer(6000);
+		StringBuffer sbuf = new StringBuffer(10000);
 		start = System.nanoTime();
 		for(int i = 0; i < LOOP_MAX_VAL; i++)
 		{
@@ -57,7 +57,7 @@ public class StringConcatExample {
 		var = sbuf.toString();
 		Log.logPerf(LogDictionary.STRING_BUFFER.replace("?", String.valueOf(LOOP_MAX_VAL)), System.nanoTime() - start);		
 		
-		StringBuilder sbuild = new StringBuilder(6000);
+		StringBuilder sbuild = new StringBuilder(10000);
 		start = System.nanoTime();
 		for(int i = 0; i < LOOP_MAX_VAL; i++)
 		{
