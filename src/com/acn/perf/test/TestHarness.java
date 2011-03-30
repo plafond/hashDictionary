@@ -14,13 +14,7 @@ public class TestHarness {
 
 	public static final int EXECUTIONS = 10;
 	public static final String LOG_PATH = "log.log";
-	
-	public static void main(String args[])
-	{
-		testNormalSetup(null);
-		testOptimizedSetup(null);
-	}
-	
+		
 	public static void testNormalSetup(Integer exec)
 	{
 		int loopCount = EXECUTIONS;
