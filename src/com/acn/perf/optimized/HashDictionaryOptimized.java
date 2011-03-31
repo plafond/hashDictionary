@@ -5,11 +5,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import com.acn.perf.optimized.db.dbutil.DBUtil;
+import com.acn.perf.CodeSamples;
 import com.acn.perf.db.factory.DBFactory;
+import com.acn.perf.example.QueryOptimizationExample;
+import com.acn.perf.log.Log;
+import com.acn.perf.optimized.db.dbutil.DBUtil;
 import com.acn.perf.optimized.hashCRC32.CRC32Hasher;
 import com.acn.perf.optimized.io.reader.DictionaryReader;
-import com.acn.perf.log.Log;
+import com.acn.perf.test.TestHarness;
 
 public class HashDictionaryOptimized {
 
@@ -30,14 +33,25 @@ public class HashDictionaryOptimized {
 	    
 	    if("1".equals(option))
 		{
-			setup();
+	    	int mode = CodeSamples.getMode();
+	    	switch (mode)
+	    	{
+	    		case 1: setup(); break;
+	    		case 2: TestHarness.testOptimizedSetup(null); break;
+	    		default: System.out.println("\nError:" + option + " is not a valid option");
+	    	}
+			
 			System.out.println("\nSetup Complete - Check the log file for benchmarks!");
-			runTerminal();
 		}
 		else if("2".equals(option))
 		{
-			System.out.println("\nNot Yet");
-			runTerminal();
+			int mode = CodeSamples.getMode();
+	    	switch (mode)
+	    	{
+	    		case 1: QueryOptimizationExample.executeOptimizedQuery(-1); break;
+	    		case 2: TestHarness.testOptimizedQueryExample(null); break;
+	    		default: System.out.println("\nError:" + option + " is not a valid option");
+	    	}
 		}
 		else if("Q".equals(option))
 		{
@@ -51,7 +65,7 @@ public class HashDictionaryOptimized {
 		}
 	}
 	
-	private static void setup()
+	public static void setup()
 	{
 		List<String> words = DictionaryReader.getWordsFromDictionary(DICTIONARY_PATH);
 		Map<String, Long> hashWords = CRC32Hasher.hashWords(words);
@@ -74,10 +88,5 @@ public class HashDictionaryOptimized {
 			try{ con.close(); }
 			catch(Exception ex){};
 		}
-	}
-	
-	public static void testHookSetup()
-	{
-		setup();
-	}
+	}	
 }

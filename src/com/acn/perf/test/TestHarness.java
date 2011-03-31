@@ -27,7 +27,7 @@ public class TestHarness {
 		
 		for(int i=0; i < loopCount; i++)
 		{
-			HashDictionaryNormal.testHookSetup();
+			HashDictionaryNormal.setup();
 			results.add(TestAnalyzer.getResultsFromLog(LOG_PATH, LogDictionary.HASH_DICTIONARY_LOG_ENTRIES));
 		}
 		
@@ -46,7 +46,7 @@ public class TestHarness {
 		List<Map<String, Long>> results = new ArrayList<Map<String, Long>>();
 		for(int i=0; i < loopCount; i++)
 		{
-			HashDictionaryOptimized.testHookSetup();
+			HashDictionaryOptimized.setup();
 			results.add(TestAnalyzer.getResultsFromLog(LOG_PATH, LogDictionary.HASH_DICTIONARY_LOG_ENTRIES));
 		}
 		

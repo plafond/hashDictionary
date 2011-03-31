@@ -2,7 +2,6 @@ package com.acn.perf;
 
 import java.util.Scanner;
 
-import com.acn.perf.example.QueryOptimizationExample;
 import com.acn.perf.example.StringConcatExample;
 import com.acn.perf.log.Log;
 import com.acn.perf.normal.HashDictionaryNormal;
@@ -29,8 +28,6 @@ public class CodeSamples {
 		System.out.println("2. HashDictionary Optimized");
 		System.out.println("3. String Concat Example");
 		System.out.println("4. String Concat Optimized Example");
-		System.out.println("5. Query");
-		System.out.println("6. Query Optimization");
 		System.out.println("Q. Quit");
 		Scanner in = new Scanner(System.in);
 
@@ -39,26 +36,12 @@ public class CodeSamples {
 	    if("1".equals(option))
 		{
 	    	Log.log("########## Normal Mode ##########");
-	    	int mode = getMode();
-	    	switch (mode)
-	    	{
-	    		case 1: HashDictionaryNormal.runTerminal(); break;
-	    		case 2: TestHarness.testNormalSetup(null); break;
-	    		default: System.out.println("\nError:" + option + " is not a valid option");
-	    				runTerminal();
-	    	}
+	    	HashDictionaryNormal.runTerminal();
 		}
 		else if("2".equals(option))
 		{
 			Log.log("########## Optimized Mode ##########");
-			int mode = getMode();
-	    	switch (mode)
-	    	{
-	    		case 1: HashDictionaryOptimized.runTerminal(); break;
-	    		case 2: TestHarness.testOptimizedSetup(null); break;
-	    		default: System.out.println("\nError:" + option + " is not a valid option");
-	    				runTerminal();
-	    	}
+			HashDictionaryOptimized.runTerminal();
 		}
 	    if("3".equals(option))
 		{
@@ -84,30 +67,6 @@ public class CodeSamples {
 	    				runTerminal();
 	    	}
 		}
-		else if("5".equals(option))
-		{
-			Log.log("########## Normal Mode ##########");
-			int mode = getMode();
-	    	switch (mode)
-	    	{
-	    		case 1: QueryOptimizationExample.executeStandardQuery(-1); break;
-	    		case 2: TestHarness.testNormalQueryExample(null); break;
-	    		default: System.out.println("\nError:" + option + " is not a valid option");
-	    				runTerminal();
-	    	}
-		}
-		else if("6".equals(option))
-		{
-			Log.log("########## Optimized Mode ##########");
-			int mode = getMode();
-	    	switch (mode)
-	    	{
-	    		case 1: QueryOptimizationExample.executeOptimizedQuery(-1); break;
-	    		case 2: TestHarness.testOptimizedQueryExample(null); break;
-	    		default: System.out.println("\nError:" + option + " is not a valid option");
-	    				runTerminal();
-	    	}
-		}
 		else if("Q".equals(option))
 		{
 			System.out.println("\nDon't forget to check the log file for benchmarks!!");
@@ -120,7 +79,7 @@ public class CodeSamples {
 		}
 	}
 	
-	private static int getMode()
+	public static int getMode()
 	{
 		Scanner in = new Scanner(System.in);
 		
